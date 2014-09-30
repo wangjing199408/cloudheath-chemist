@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>序列号</th>
+        <th>时间</th>
+        <th>患者</th>
+        <th>医生</th>
+        <th>检测项目</th>
+        <th class="text-right">费用</th>
+        <th class="text-right">状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="entity in entities" ng-click="showDetail(entity)" class="clcikable">
+        <td>{{entity.serialNumber}}</td>
+        <td>{{entity.created | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td>{{entity.ssc.name}}</td>
+        <td>{{entity.doctor.name}}</td>
+        <td>{{entity.project.name}}</td>
+        <td class="text-right">{{entity.cost /100 | currency:"￥"}}</td>
+        <td class="text-right">{{entity.status | statusText }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

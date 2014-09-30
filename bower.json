@@ -1,0 +1,38 @@
+{
+  "name": "Cloudheath-Collector",
+  "version": "0.0.1",
+  "homepage": "https://github.com/cloudheath/cloudheath-collector",
+  "authors": [
+    "extensivepro"
+  ],
+  "description": "Web Front For Collector of CloudHeath",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src/bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.2.21",
+    "angular-cookies": "~1.2.21",
+    "angular-bootstrap": "~0.11.0",
+    "angular-ui-router": "^0.2.10",
+    "bootstrap": "~3.2.0",
+    "font-awesome": "~4.2.0",
+    "moment": "~2.8.2",
+    "angular-ui-utils": "~0.1.1",
+    "angular-morph": "*",
+    "angular-loading-bar": "~0.6.0",
+    "cloudheath": "https://github.com/cloudheath/bower-cloudheath.git",
+    "async": "~0.9.0"
+  },
+  "keywords": [
+    "cloud",
+    "health",
+    "collector"
+  ]
+}

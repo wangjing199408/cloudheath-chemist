@@ -1,0 +1,46 @@
+<div class="widget">
+  <div class="widget-header">
+    <i class="fa fa-crosshairs"></i> 处理采集单 
+    <div class="clearfix"></div>
+  </div>
+  <div class="widget-body">
+    <h2 class="text-justify">请在读卡器中插入设备卡：</h2>
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">客户卡号</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control focus" ng-model="ssc.cardNo" placeholder="客户的医保卡号" ui-event="{blur: 'fetch()'}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">姓名</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">{{ssc.name}}</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">医保账户余额</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">{{ssc.balance/100 | currency:"￥"}} 元</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">总计</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">{{ssc.total/100 | currency:"￥"}} 元</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div ng-include="'partials/task-list.html'"></div>
+      </div>
+      <hr />
+      <alert ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.msg}}</alert>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-lg btn-primary" ng-click="settle()"><i class="fa fa-check"></i> 确认支付</button>
+          <button class="btn btn-lg btn-warning" ng-click="cancel()"><i class="fa fa-times"></i> 取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>  

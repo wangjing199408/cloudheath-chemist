@@ -1,0 +1,19 @@
+<div class="row" ng-controller="TasksCtrl" ng-init='init()'>
+  <div class="widget">
+    <div class="widget-header">
+      <div class="col-md-2">
+        <i class="fa fa-list"></i> 当日记录 
+      </div>
+      <div class="col-md-10">
+        <a ng-click="fetch()" class="pull-right btn"><i class="fa fa-refresh"></i> 刷新 </a>
+        <a ng-click="showCreate()" class="pull-right btn"><i class="fa fa-crosshairs"></i> 处理采集单 </a>
+        <a ng-click="fetch()" class="pull-right btn"><i class="fa fa-search"></i> 搜索 </a>
+        <input type="text" placeholder="Search" class="form-control input-sm pull-right" ng-model="search.text" ui-keypress="{ 13 : 'fetch()' }">
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="widget-body no-padding">
+      <div ng-include="'partials/task-list.html'"></div>
+    </div>
+  </div>  
+</div>
